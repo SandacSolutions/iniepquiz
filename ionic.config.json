@@ -1,0 +1,7 @@
+{
+  "name": "iniepquiz",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

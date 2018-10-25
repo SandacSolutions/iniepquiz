@@ -1,0 +1,49 @@
+page-home {
+    #main {
+		text-align: center; 
+        button {
+            background: transparent;
+            border: none;
+            width: 70%;
+            padding: 20px;
+            color: #e8e3e3;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+    }
+    h1 {
+        font-size: 50px;
+        font-family: Trebuchet MS;
+        color: black;
+    }
+    .icon {
+        text-align: center;
+    }
+    .icon h1 {
+        font-size: 30px;
+    }
+    .icon2 {
+        text-align: center;
+    }
+    img.icon2{
+		width: 400px;
+		height: 100px;
+    }
+    @keyframes backcolor {
+        0% {
+            background-position: 0% 99%
+        }
+        ;
+        50% {
+            background-position: 100% 1%
+        }
+        ;
+        100% {
+            background-position: 10% 90%
+        }
+        ;
+    }
+}
