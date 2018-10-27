@@ -28,9 +28,8 @@ page-home {
     .icon2 {
         text-align: center;
     }
-    img.icon2{
-		width: 400px;
-		height: 100px;
+    .icon2 img{
+		max-width: 40%;
     }
     @keyframes backcolor {
         0% {
