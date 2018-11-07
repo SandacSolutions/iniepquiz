@@ -1135,16 +1135,17 @@
 
   <div id="score" *ngIf="counter > 0 && done === true">
     <div id="time">{{timerValue}}s</div>
-    <div id="results"><b>Your Score</b><br>{{score}}/{{numQ}} <br>
+    <div id="results"><b>Your Score</b><br>{{score}}/100 <br>
       <div class="stars">
-        <ion-icon class="star" name="star" *ngIf="score > 5"></ion-icon>
-        <ion-icon class="star" name="star" *ngIf="score > 9"></ion-icon>
-        <ion-icon class="star" name="star" *ngIf="score > 12"></ion-icon>
+        <ion-icon class="star" name="star" *ngIf="score >= 20"></ion-icon>
+        <ion-icon class="star" name="star" *ngIf="score >= 40"></ion-icon>
+        <ion-icon class="star" name="star" *ngIf="score >= 60"></ion-icon>
+        <ion-icon class="star" name="star" *ngIf="score >= 80"></ion-icon>
+        <ion-icon class="star" name="star" *ngIf="score >= 90"></ion-icon>
       </div>
     </div>
 
     <button ion-button (click)="reset()" id="start">Restart</button>
-
     <div class="results-table">
       <div class="row">
         <div *ngFor="let x of scores">

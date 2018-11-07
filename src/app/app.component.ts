@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import  { timer } from 'rxjs/observable/timer';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { SynonymsPage } from '../pages/synonyms/synonyms'
 
 @Component({
   templateUrl: 'app.html'
 })
+@Injectable()
 export class MyApp {
   rootPage:any = TabsPage;
   showSplash = true;

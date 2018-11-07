@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SynonymsPage } from '../synonyms/synonyms';
+import { PhrasalPage } from '../phrasal/phrasal';
 
 
 @Component({
@@ -14,5 +15,9 @@ export class HomePage {
 
 	openSyno() {
 		this.navCtrl.push(SynonymsPage);
+	}
+
+	openPhrasal() {
+		this.navCtrl.push(PhrasalPage);
 	}
 }

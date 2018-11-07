@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { SynonymsPage } from '../pages/synonyms/synonyms';
+import { PhrasalPage } from '../pages/phrasal/phrasal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,14 +21,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    SynonymsPage
+    SynonymsPage,
+    PhrasalPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   exports: [
-    SynonymsPage
+    SynonymsPage,
+    PhrasalPage
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    SynonymsPage
+    SynonymsPage,
+    PhrasalPage
   ],
   providers: [
     StatusBar,
