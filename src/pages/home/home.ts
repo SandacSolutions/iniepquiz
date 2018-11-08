@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SynonymsPage } from '../synonyms/synonyms';
 import { PhrasalPage } from '../phrasal/phrasal';
+import { HistoryPage } from '../history/history';
 
 
 @Component({
@@ -19,5 +20,9 @@ export class HomePage {
 
 	openPhrasal() {
 		this.navCtrl.push(PhrasalPage);
+	}
+
+	openHist() {
+		this.navCtrl.push(HistoryPage);
 	}
 }

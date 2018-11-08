@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { SynonymsPage } from '../pages/synonyms/synonyms';
 import { PhrasalPage } from '../pages/phrasal/phrasal';
+import { HistoryPage } from '../pages/history/history';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     SynonymsPage,
-    PhrasalPage
+    PhrasalPage,
+    HistoryPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   exports: [
     SynonymsPage,
-    PhrasalPage
+    PhrasalPage,
+    HistoryPage
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     SynonymsPage,
-    PhrasalPage
+    PhrasalPage,
+    HistoryPage
   ],
   providers: [
     StatusBar,
