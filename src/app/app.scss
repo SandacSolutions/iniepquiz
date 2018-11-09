@@ -39,3 +39,13 @@ ion-content {
     background-size: 400% 400%;
     animation: backcolor 24s ease-out infinite;
 }
+
+.toast {
+    text-align: center;
+
+    .toast-wrapper {
+        border-radius: 20px;
+        -moz-border-radius: 20px;
+        width: 75%;
+    }
+}

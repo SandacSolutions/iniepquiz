@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SynonymsPage } from '../pages/synonyms/synonyms';
 import { PhrasalPage } from '../pages/phrasal/phrasal';
 import { HistoryPage } from '../pages/history/history';
+import { GeneralPage } from '../pages/general/general'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,16 +25,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     SynonymsPage,
     PhrasalPage,
-    HistoryPage
+    HistoryPage,
+    GeneralPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
-  ],
-  exports: [
-    SynonymsPage,
-    PhrasalPage,
-    HistoryPage
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     SynonymsPage,
     PhrasalPage,
-    HistoryPage
+    HistoryPage,
+    GeneralPage
   ],
   providers: [
     StatusBar,
