@@ -1,1 +1,640 @@
-<ion-header> <ion-navbar color="primary"> <img src="assets/imgs/CAPA.png" class="icon2"> </ion-navbar></ion-header><ion-content padding id="main"> <br> <div id="landing" *ngIf="counter == 0 && done === false">  <h3 style="line-height: 250%">General</h3> <p>How much do you know about everything? Test yourself in this general quiz, but it won't be easy!</p> <button ion-button (click)="onStart()" id="start">START QUIZ</button> </div> <div id="minidash" *ngIf="counter > 0 && done === false"> <span>Question {{ps_counter-1}}</span> <span>Chances: {{chances}}</span> </div> <div class="quiz" *ngIf = "counter == 1"> <h1>Grand Central Terminal</h1> <p>Grand Central Terminal, Park Avenue, New York is the world's</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">largest trade center</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">largest bus terminal</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">largest shopping in America</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">largest railway station</button> </div> </div> <div class="quiz" *ngIf = "counter == 2"> <h1>Entomology</h1> <p>What does Entomology studies?</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Insects</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Behavior of humans</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Origin of technical terms</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Formation of rocks</button> </div> </div> <div class="quiz" *ngIf = "counter == 3"> <h1>Eritrea</h1> <p>Eritrea, which became the 182nd member of the UN in 1993, is in what continent?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">America</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Africa</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Europe</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Asia</button> </div> </div> <div class="quiz" *ngIf = "counter == 4"> <h1>The Nobel Prize</h1> <p>For which of the following disciplines is Nobel Prize awarded?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Math and Philosophy</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Physics and Sociologyd</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Peace, Chemistry and Science</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Literature, Economics and Physiology</button> </div> </div> <div class="quiz" *ngIf = "counter == 5"> <h1>A heart transplant</h1> <p>Who was the pacient in the first human heart transplant operation conducted by Dr. Christiaan Barnard?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Neil Armstrong</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Louis Washkansky</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Johandersson Markdown</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Leui Johnes</button> </div> </div> <div class="quiz" *ngIf = "counter == 6"> <h1>Some "drunk" reaction</h1> <p>The reaction which converts sugar solution into alcohol is an example of...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">saponification</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">hydrogenation</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">hydrolysis</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">fermentation</button> </div> </div> <div class="quiz" *ngIf = "counter == 7"> <h1>Olympc Games</h1> <p>The Olympic Flame symbolises...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">unity among nations</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">speed, perfection and strength</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">continuity between the ancient and modern games</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">securing harmony among nations</button> </div> </div> <div class="quiz" *ngIf = "counter == 8"> <h1>The mighty penicillin</h1> <p>The Scottish bacteriologist who discovered penicillin was...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Albert Einstein</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Archimeder</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Alexander Fleming</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Aryabhatta</button> </div> </div> <div class="quiz" *ngIf = "counter == 9"> <h1>A strange name</h1> <p>Golf player Vijay Singh belongs to which country?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">USA</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">India</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Fiji</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">UK</button> </div> </div> <div class="quiz" *ngIf = "counter == 10"> <h1>Afghan War</h1> <p>First Afghan War took place in...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">1843</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">1839</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">1833</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">1848</button> </div> </div> <div class="quiz" *ngIf = "counter == 11"> <h1>How many bones?</h1> <p>The number of already named bones in the human skeleton is...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">200</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">212</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">218</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">206</button> </div> </div> <div class="quiz" *ngIf = "counter == 12"> <h1>Opium War</h1> <p>First China War (Opium War) was fought between...</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">China and Britain</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">China and Greek</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">China and France</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">China and Egypt</button> </div> </div> <div class="quiz" *ngIf = "counter == 13"> <h1>Neighbors</h1> <p>How many countries border Brazil?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">9</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">5</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">8</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">10</button> </div> </div> <div class="quiz" *ngIf = "counter == 14"> <h1>Cups</h1> <p>Federation Cup, World Cup, Allywyn International Trophy and Challenge Cup are awarded to winners of...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">tennis</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">volleyball</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">basketball</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">cricket</button> </div> </div> <div class="quiz" *ngIf = "counter == 15"> <h1>Remove what?</h1> <p>Gravity setting chambers are used in industries to remove...</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">suspended particulate matte</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">SO₂</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">NO₂</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">CO₂</button> </div> </div> <div class="quiz" *ngIf = "counter == 16"> <h1>Friction</h1> <p>Friction can be reduced by changing from...</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">sliding to rolling</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">rolling to sliding</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">potential energy to kinetic energy</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">dynamic to static</button> </div> </div> <div class="quiz" *ngIf = "counter == 17"> <h1>Antarctic Expedition</h1> <p>What was installed during eleventh Antarctic Expedition in Nov. 1991/March 1992?</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">SODAR</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Second Permanent Station</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">First permanent station</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Arrival Heights Laboratory</button> </div> </div> <div class="quiz" *ngIf = "counter == 18"> <h1>A Capella</h1> <p>How many instruments there are in an 'a cappella' formation?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">10</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">5</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">6</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">None</button> </div> </div> <div class="quiz" *ngIf = "counter == 19"> <h1>That blue bird</h1> <p>What is the name of Twitter's blue bird mascot?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">It's just a bird.</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Larry</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Harry</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Little Blue</button> </div> </div> <div class="quiz" *ngIf = "counter == 20"> <h1>WW II</h1> <p>During World War II, when did Germany attack France?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">1939</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">1940</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">1941</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">1942</button> </div> </div> <div class="quiz" *ngIf = "counter == 21"> <h1>Ozone Layer</h1> <p>The ozone layer restricts...</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">UVB</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">visible light</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">infrared radiation</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">ultraviolet radiation</button> </div> </div> <div class="quiz" *ngIf = "counter == 22"> <h1>Filariasis</h1> <p>Filariasis is caused by...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">bacteria</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">virus</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">mosquito</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">roundworm</button> </div> </div> <div class="quiz" *ngIf = "counter == 23"> <h1>Headquarters of UNO are situated at...</h1> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Geneva</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Hague</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">New York</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Vienna</button> </div> </div> <div class="quiz" *ngIf = "counter == 24"> <h1>To see under water</h1> <p>For seeing objects at the surface of water from a submarine under water, the instrument used is...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">kaleidoscope</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">periscope</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">telescope</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">spectroscope</button> </div> </div> <div class="quiz" *ngIf = "counter == 25"> <h1>The G-15</h1> <p>G-15 is an economic grouping formed mainly by...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">First World Nations</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Second World Nation</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Third World Nations</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Fourth World Nations</button> </div> </div> <div class="quiz" *ngIf = "counter == 26"> <h1>Fathometer</h1> <p>Fathometer is used to measure...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">earthquakes</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">ocean depth</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">rainfall</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">sound intensity</button> </div> </div> <div class="quiz" *ngIf = "counter == 27"> <h1>Galvanizing</h1> <p>For galvanizing iron which of the following metals is used?</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Zinc</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Aluminium</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Copper</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Lead</button> </div> </div> <div class="quiz" *ngIf = "counter == 28"> <h1>Purifying water</h1> <p>For purifying drinking water alum is used...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">to kill bacteria</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">to remove salts</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">for coagulation of mud particles</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">to remove gases</button> </div> </div> <div class="quiz" *ngIf = "counter == 29"> <h1>Mercury thermometer</h1> <p>Who developed the mercury thermometer in 1714?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Anders Celsius</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">William Thomson</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">René-Antoine Ferchault de Réaumur</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Gabriel Daniel Fahrenheit</button> </div> </div> <div class="quiz" *ngIf = "counter == 30"> <h1>During the first crusade, crusaders reached Jerusalem and captured it in...</h1> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">1000</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">1515</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">1200</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">1099</button> </div> </div> <div class="quiz" *ngIf = "counter == 31"> <h1>The East Timor</h1> <p>East Timor, which became the 191st member of the UN, is in the continent of...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Africa</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Asia</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Europe</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Oceania</button> </div> </div> <div class="quiz" *ngIf = "counter == 32"> <h1>Separation of liquids</h1> <p>Force that prevents the separation of liquid substances:</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Force of adhesion</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Centrifugal force</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Force of cohesion</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Force of friction</button> </div> </div> <div class="quiz" *ngIf = "counter == 33"> <h1>Blood cells</h1> <p>In a normal human body, the total approximated number of red blood cells is?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">10-15 trillion</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">15-20 trillion</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">20-30 trillion</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">20-25 trillion</button> </div> </div> <div class="quiz" *ngIf = "counter == 34"> <h1>First metal</h1> <p>The first metal to be used by man was...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">bronze</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">iron</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">gold</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">copper</button> </div> </div> <div class="quiz" *ngIf = "counter == 35"> <h1>Combustible</h1> <p>The minimum temperature at which a combustible substance catches fire is called...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">firing temperature</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">ignition temperature</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">boiling temperature</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">optimum temperature</button> </div> </div> <div class="quiz" *ngIf = "counter == 36"> <h1>Strait of Gibraltar</h1> <p>Which of the following countries are separated by the Strait of Gibraltar?</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Morroco and Spain</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Portugal and Morocco</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Algeria and Spain</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Algeria and Portugal</button> </div> </div> <div class="quiz" *ngIf = "counter == 37"> <h1>Mountain ranges</h1> <p>Which of the following mountain ranges form the longest mountain chain in the world?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">The Rockies of North America</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">The Transantarctic Range</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">The Andes of South America</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">The Great Dividing Range of Australia</button> </div> </div> <div class="quiz" *ngIf = "counter == 38"> <h1>Compass</h1> <p>The pointer or arrow of the magnetized needle of a compass indicates which among the following?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Geographic North Pole</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Magnetic South Pole</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Geo-magnetic North Pole</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Magnetic North Pole</button> </div> </div> <div class="quiz" *ngIf = "counter == 39"> <h1>The driest</h1> <p>Which among the following is the driest desert in Earth?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Kalahari</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Atacama</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Mojave</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Tabernas</button> </div> </div> <div class="quiz" *ngIf = "counter == 40"> <h1>River basins</h1> <p>Which among the following is the correct set of three largest river basins (by area), from largest to smallest?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Amazon, Congo, Ganga</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Amazon, Mississippi, Ganga</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Amazon, Congo, Mississippi</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Amazon, Mississippi, Congo</button> </div> </div> <div class="quiz" *ngIf = "counter == 41"> <h1>Temperature difference</h1> <p>Comparing to other regions, the day night temperature difference will be maximum in which among the following regions?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Tundra</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Mediterranean</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Equatorial</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Tropical Deserts</button> </div> </div> <div class="quiz" *ngIf = "counter == 42"> <h1>Einstein and the Nobel</h1> <p>Albert Einstein was awarded Nobel Prize for his path-breaking research and formulation of the:</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Theory of Relavitity</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Principle of Wave-Particle Duality</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Laws of Photo-Electric Effect</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Theory of Critical Opalescence</button> </div> </div> <div class="quiz" *ngIf = "counter == 43"> <h1>UNO</h1> <p>The official working languages recognised by the UNO are...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Chinese and English</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">French and Russian</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Spanish and Arabic</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">All above</button> </div> </div> <div class="quiz" *ngIf = "counter == 44"> <h1>Fulminology</h1> <p>Which among the following is studied under 'fulminology'?</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Lightning</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Sudden changes in atmosphere</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Cloudbursts</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Volcanic Eruptions</button> </div> </div> <div class="quiz" *ngIf = "counter == 45"> <h1>Waves and night vision</h1> <p>Which among the following waves are most commonly used in the Night Vision Devices?</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Infra Red Waves</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Microwaves</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Radio Waves</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Ultra Violet Waves</button> </div> </div> <div class="quiz" *ngIf = "counter == 46"> <h1>Sunburn</h1> <p>Which among the following is the most common cause of Sunburn?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Visible Radiation</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Ultraviolet Radiation</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Infrared Radiation</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Microwave Radiation</button> </div> </div> <div class="quiz" *ngIf = "counter == 47"> <h1>Circular forces</h1> <p>A vehicle moving on a circular path experiences...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">centrifugal force</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">gravitational force</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">centripetal force</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">traction force</button> </div> </div> <div class="quiz" *ngIf = "counter == 48"> <h1>Mixed heart</h1> <p>Which among the following have a ‘mixed heart’ ,that is the heart in which the oxygenated and the deoxygenated blood is mixed?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Birds</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Fishes</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Reptiles</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Nematodes</button> </div> </div> <div class="quiz" *ngIf = "counter == 49"> <h1>Door to Hell</h1> <p>In which country is there a natural gas pit nicknamed the ‘Door to Hell’ that has been on fire since 1971?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Azerbaijan</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Bulgaria</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Turkmenistan</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Russia</button> </div> </div> <div class="quiz" *ngIf = "counter == 50"> <h1>Where's my thumb?</h1> <p>Which famous statue lost a thumb in a thunderstorm struck by a lightning?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Statue of Liberty</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Christ the Redeemer</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">The Great Sphinx Of Giza</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">The Motherland Calls</button> </div> </div> <div class="quiz" *ngIf = "counter == 51"> <h1>Biggest selling single</h1> <p>The biggest selling music single of all time is...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Billie Jean</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Feed the world</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Candle in the Wind</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">White Christmas</button> </div> </div> <div class="quiz" *ngIf = "counter == 52"> <h1>Java is terrible!</h1> <p>Who was the founder of Java computer language?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Brendan Eich</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Guido van Rossum</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Jack Dorsey</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">James Gosling</button> </div> </div> <div class="quiz" *ngIf = "counter == 53"> <h1>Android's basis</h1> <p>In which operational system is Android based on?</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Windows</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Linux</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">Android itself</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Tizen</button> </div> </div> <div class="quiz" *ngIf = "counter == 54"> <h1>Olympc Flame</h1> <p>The Olympic Flame, was, for the first time, ceremonially lighted and burnt in a giant torch at the entrance of the stadium at...</p> <div class="btn-row"> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Amsterdam Games</button> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">Athens Games</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">London Games</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Paris Games</button> </div> </div> <div class="quiz" *ngIf = "counter == 55"> <h1>Philology</h1> <p>Philology is the...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">study of bones</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">study of muscles</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">study of architecture</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">science of languages</button> </div> </div> <div class="quiz" *ngIf = "counter == 56"> <h1>2006 World Cup</h1> <p>The 2006 World Cup Football Tournament was held in...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">France</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">Germany</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">China</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">Brazil</button> </div> </div> <div class="quiz" *ngIf = "counter == 57"> <h1>Meaning of flags</h1> <p>The 'Black Flag' signifies...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">revolution/danger</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">protest</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">peace</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">truce</button> </div> </div> <div class="quiz" *ngIf = "counter == 58"> <h1>OVNIS EVERYWHERE!</h1> <p>Study of life in outer space is known as...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">etology</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">ufology</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">exobiology</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">neobiology</button> </div> </div> <div class="quiz" *ngIf = "counter == 59"> <h1>Oscar Awards</h1> <p>Oscar Awards were instituted in...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">1968</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">1901</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">1965</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">1929</button> </div> </div> <div class="quiz" *ngIf = "counter == 60"> <h1>Iodine</h1> <p>Small amounts of iodine are necessary in our diet to...</p> <div class="btn-row"> <button ion-button [style.background]="bC2" (click) = "precheck(2)" [disabled]="disableButton">prevent pellagra</button> <button ion-button [style.background]="bC3" (click) = "precheck(3)" [disabled]="disableButton">stimulate clotting of blood</button> <button ion-button [style.background]="bC4" (click) = "precheck(4)" [disabled]="disableButton">stimulate pituitary gland</button> <button ion-button [style.background]="correctColor" (click) = "precheck(1)" [disabled]="disableButton">compensate for underactive the thyroid gland</button> </div> </div> <div class="quiz" *ngIf="counter == 61" style="height: 315px"> <h1>Congratulations!</h1> <p>You've finished this one. Click below to see your results:</p> <div class="btn-row"> <button ion-button id="proceed" (click)="viewResults()" block>VIEW RESULTS</button> </div> </div> <div id="score" *ngIf="counter > 0 && done === true"> <div id="time">{{timerValue}}s</div> <div id="results"><b>Your Score</b><br>{{score}}/50<br> <div class="stars"> <ion-icon class="star" name="star" *ngIf="score >= 12"></ion-icon> <ion-icon class="star" name="star" *ngIf="score >= 24"></ion-icon> <ion-icon class="star" name="star" *ngIf="score >= 36"></ion-icon> <ion-icon class="star" name="star" *ngIf="score >= 48"></ion-icon> <ion-icon class="star" name="star" *ngIf="score >= 56"></ion-icon> </div> </div> <button ion-button (click)="reset()" id="start">Restart</button> <div class="results-table"> <div class="row"> <div *ngFor="let x of scores"> <span id="wrong" *ngIf="x == 0">{{x}}</span> <span id="right" *ngIf="x == 1">{{x}}</span> </div> <br><br><br><br> </div> </div> </div></ion-content>
+<ion-header>
+    <ion-navbar color="primary"> <img src="assets/imgs/CAPA.png" class="icon2"> </ion-navbar>
+</ion-header>
+<ion-content padding id="main">
+    <br>
+    <div id="landing" *ngIf="counter == 0 && done === false">
+        <h3 style="line-height: 250%">General</h3>
+        <p>How much do you know about everything? Test yourself in this general quiz, but it won't be easy!</p>
+        <button ion-button (click)="onStart()" id="start">START QUIZ</button>
+    </div>
+    <div id="minidash" *ngIf="counter > 0 && done === false"> <span>Question {{ps_counter-1}}</span> <span>Chances: {{chances}}</span> </div>
+    <div class="quiz" *ngIf="counter == 1">
+        <h1>Grand Central Terminal</h1>
+        <p>Grand Central Terminal, Park Avenue, New York is the world's</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">largest trade center</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">largest bus terminal</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">largest shopping in America</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">largest railway station</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 2">
+        <h1>Entomology</h1>
+        <p>What does Entomology studies?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Insects</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Behavior of humans</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Origin of technical terms</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Formation of rocks</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 3">
+        <h1>Eritrea</h1>
+        <p>Eritrea, which became the 182nd member of the UN in 1993, is in what continent?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">America</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Africa</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Europe</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Asia</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 4">
+        <h1>The Nobel Prize</h1>
+        <p>For which of the following disciplines is Nobel Prize awarded?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Math and Philosophy</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Physics and Sociologyd</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Peace, Chemistry and Science</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Literature, Economics and Physiology</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 5">
+        <h1>A heart transplant</h1>
+        <p>Who was the pacient in the first human heart transplant operation conducted by Dr. Christiaan Barnard?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Neil Armstrong</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Louis Washkansky</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Johandersson Markdown</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Leui Johnes</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 6">
+        <h1>Some "drunk" reaction</h1>
+        <p>The reaction which converts sugar solution into alcohol is an example of...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">saponification</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">hydrogenation</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">hydrolysis</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">fermentation</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 7">
+        <h1>Olympc Games</h1>
+        <p>The Olympic Flame symbolises...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">unity among nations</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">speed, perfection and strength</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">continuity between the ancient and modern games</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">securing harmony among nations</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 8">
+        <h1>The mighty penicillin</h1>
+        <p>The Scottish bacteriologist who discovered penicillin was...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Albert Einstein</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Archimeder</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Alexander Fleming</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Aryabhatta</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 9">
+        <h1>A strange name</h1>
+        <p>Golf player Vijay Singh belongs to which country?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">USA</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">India</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Fiji</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">UK</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 10">
+        <h1>Afghan War</h1>
+        <p>First Afghan War took place in...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">1843</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">1839</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">1833</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">1848</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 11">
+        <h1>How many bones?</h1>
+        <p>The number of already named bones in the human skeleton is...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">200</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">212</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">218</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">206</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 12">
+        <h1>Opium War</h1>
+        <p>First China War (Opium War) was fought between...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">China and Britain</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">China and Greek</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">China and France</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">China and Egypt</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 13">
+        <h1>Neighbors</h1>
+        <p>How many countries border Brazil?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">9</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">5</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">8</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">10</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 14">
+        <h1>Cups</h1>
+        <p>Federation Cup, World Cup, Allywyn International Trophy and Challenge Cup are awarded to winners of...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">tennis</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">volleyball</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">basketball</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">cricket</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 15">
+        <h1>Remove what?</h1>
+        <p>Gravity setting chambers are used in industries to remove...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">suspended particulate matte</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">SO₂</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">NO₂</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">CO₂</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 16">
+        <h1>Friction</h1>
+        <p>Friction can be reduced by changing from...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">sliding to rolling</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">rolling to sliding</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">potential energy to kinetic energy</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">dynamic to static</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 17">
+        <h1>Antarctic Expedition</h1>
+        <p>What was installed during eleventh Antarctic Expedition in Nov. 1991/March 1992?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">SODAR</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Second Permanent Station</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">First permanent station</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Arrival Heights Laboratory</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 18">
+        <h1>A Capella</h1>
+        <p>How many instruments there are in an 'a cappella' formation?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">10</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">5</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">6</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">None</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 19">
+        <h1>That blue bird</h1>
+        <p>What is the name of Twitter's blue bird mascot?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">It's just a bird.</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Larry</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Harry</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Little Blue</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 20">
+        <h1>WW II</h1>
+        <p>During World War II, when did Germany attack France?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">1939</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">1940</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">1941</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">1942</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 21">
+        <h1>Ozone Layer</h1>
+        <p>The ozone layer restricts...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">UVB</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">visible light</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">infrared radiation</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">ultraviolet radiation</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 22">
+        <h1>Filariasis</h1>
+        <p>Filariasis is caused by...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">bacteria</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">virus</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">mosquito</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">roundworm</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 23">
+        <h1>Headquarters of UNO are situated at...</h1>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Geneva</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Hague</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">New York</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Vienna</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 24">
+        <h1>To see under water</h1>
+        <p>For seeing objects at the surface of water from a submarine under water, the instrument used is...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">kaleidoscope</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">periscope</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">telescope</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">spectroscope</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 25">
+        <h1>The G-15</h1>
+        <p>G-15 is an economic grouping formed mainly by...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">First World Nations</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Second World Nation</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Third World Nations</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Fourth World Nations</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 26">
+        <h1>Fathometer</h1>
+        <p>Fathometer is used to measure...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">earthquakes</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">ocean depth</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">rainfall</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">sound intensity</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 27">
+        <h1>Galvanizing</h1>
+        <p>For galvanizing iron which of the following metals is used?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Zinc</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Aluminium</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Copper</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Lead</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 28">
+        <h1>Purifying water</h1>
+        <p>For purifying drinking water alum is used...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">to kill bacteria</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">to remove salts</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">for coagulation of mud particles</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">to remove gases</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 29">
+        <h1>Mercury thermometer</h1>
+        <p>Who developed the mercury thermometer in 1714?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Anders Celsius</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">William Thomson</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">René-Antoine Ferchault de Réaumur</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Gabriel Daniel Fahrenheit</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 30">
+        <h1>During the first crusade, crusaders reached Jerusalem and captured it in...</h1>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">1000</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">1515</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">1200</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">1099</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 31">
+        <h1>The East Timor</h1>
+        <p>East Timor, which became the 191st member of the UN, is in the continent of...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Africa</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Asia</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Europe</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Oceania</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 32">
+        <h1>Separation of liquids</h1>
+        <p>Force that prevents the separation of liquid substances:</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Force of adhesion</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Centrifugal force</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Force of cohesion</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Force of friction</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 33">
+        <h1>Blood cells</h1>
+        <p>In a normal human body, the total approximated number of red blood cells is?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">10-15 trillion</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">15-20 trillion</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">20-30 trillion</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">20-25 trillion</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 34">
+        <h1>First metal</h1>
+        <p>The first metal to be used by man was...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">bronze</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">iron</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">gold</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">copper</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 35">
+        <h1>Combustible</h1>
+        <p>The minimum temperature at which a combustible substance catches fire is called...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">firing temperature</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">ignition temperature</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">boiling temperature</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">optimum temperature</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 36">
+        <h1>Strait of Gibraltar</h1>
+        <p>Which of the following countries are separated by the Strait of Gibraltar?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Morroco and Spain</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Portugal and Morocco</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Algeria and Spain</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Algeria and Portugal</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 37">
+        <h1>Mountain ranges</h1>
+        <p>Which of the following mountain ranges form the longest mountain chain in the world?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">The Rockies of North America</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">The Transantarctic Range</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">The Andes of South America</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">The Great Dividing Range of Australia</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 38">
+        <h1>Compass</h1>
+        <p>The pointer or arrow of the magnetized needle of a compass indicates which among the following?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Geographic North Pole</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Magnetic South Pole</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Geo-magnetic North Pole</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Magnetic North Pole</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 39">
+        <h1>The driest</h1>
+        <p>Which among the following is the driest desert in Earth?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Kalahari</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Atacama</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Mojave</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Tabernas</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 40">
+        <h1>River basins</h1>
+        <p>Which among the following is the correct set of three largest river basins (by area), from largest to smallest?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Amazon, Congo, Ganga</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Amazon, Mississippi, Ganga</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Amazon, Congo, Mississippi</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Amazon, Mississippi, Congo</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 41">
+        <h1>Temperature difference</h1>
+        <p>Comparing to other regions, the day night temperature difference will be maximum in which among the following regions?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Tundra</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Mediterranean</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Equatorial</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Tropical Deserts</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 42">
+        <h1>Einstein and the Nobel</h1>
+        <p>Albert Einstein was awarded Nobel Prize for his path-breaking research and formulation of the:</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Theory of Relavitity</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Principle of Wave-Particle Duality</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Laws of Photo-Electric Effect</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Theory of Critical Opalescence</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 43">
+        <h1>UNO</h1>
+        <p>The official working languages recognised by the UNO are...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Chinese and English</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">French and Russian</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Spanish and Arabic</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">All above</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 44">
+        <h1>Fulminology</h1>
+        <p>Which among the following is studied under 'fulminology'?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Lightning</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Sudden changes in atmosphere</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Cloudbursts</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Volcanic Eruptions</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 45">
+        <h1>Waves and night vision</h1>
+        <p>Which among the following waves are most commonly used in the Night Vision Devices?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Infra Red Waves</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Microwaves</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Radio Waves</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Ultra Violet Waves</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 46">
+        <h1>Sunburn</h1>
+        <p>Which among the following is the most common cause of Sunburn?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Visible Radiation</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Ultraviolet Radiation</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Infrared Radiation</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Microwave Radiation</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 47">
+        <h1>Circular forces</h1>
+        <p>A vehicle moving on a circular path experiences...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">centrifugal force</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">gravitational force</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">centripetal force</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">traction force</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 48">
+        <h1>Mixed heart</h1>
+        <p>Which among the following have a ‘mixed heart’ ,that is the heart in which the oxygenated and the deoxygenated blood is mixed?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Birds</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Fishes</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Reptiles</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Nematodes</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 49">
+        <h1>Door to Hell</h1>
+        <p>In which country is there a natural gas pit nicknamed the ‘Door to Hell’ that has been on fire since 1971?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Azerbaijan</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Bulgaria</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Turkmenistan</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Russia</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 50">
+        <h1>Where's my thumb?</h1>
+        <p>Which famous statue lost a thumb in a thunderstorm struck by a lightning?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Statue of Liberty</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Christ the Redeemer</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">The Great Sphinx Of Giza</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">The Motherland Calls</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 51">
+        <h1>Biggest selling single</h1>
+        <p>The biggest selling music single of all time is...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Billie Jean</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Feed the world</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Candle in the Wind</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">White Christmas</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 52">
+        <h1>Java is terrible!</h1>
+        <p>Who was the founder of Java computer language?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Brendan Eich</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Guido van Rossum</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Jack Dorsey</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">James Gosling</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 53">
+        <h1>Android's basis</h1>
+        <p>In which operational system is Android based on?</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Windows</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Linux</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">Android itself</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Tizen</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 54">
+        <h1>Olympc Flame</h1>
+        <p>The Olympic Flame, was, for the first time, ceremonially lighted and burnt in a giant torch at the entrance of the stadium at...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Amsterdam Games</button>
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">Athens Games</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">London Games</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Paris Games</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 55">
+        <h1>Philology</h1>
+        <p>Philology is the...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">study of bones</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">study of muscles</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">study of architecture</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">science of languages</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 56">
+        <h1>2006 World Cup</h1>
+        <p>The 2006 World Cup Football Tournament was held in...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">France</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">Germany</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">China</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">Brazil</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 57">
+        <h1>Meaning of flags</h1>
+        <p>The 'Black Flag' signifies...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">revolution/danger</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">protest</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">peace</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">truce</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 58">
+        <h1>OVNIS EVERYWHERE!</h1>
+        <p>Study of life in outer space is known as...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">etology</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">ufology</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">exobiology</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">neobiology</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 59">
+        <h1>Oscar Awards</h1>
+        <p>Oscar Awards were instituted in...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">1968</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">1901</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">1965</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">1929</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 60">
+        <h1>Iodine</h1>
+        <p>Small amounts of iodine are necessary in our diet to...</p>
+        <div class="btn-row">
+            <button ion-button [style.background]="bC2" (click)="precheck(2)" [disabled]="disableButton">prevent pellagra</button>
+            <button ion-button [style.background]="bC3" (click)="precheck(3)" [disabled]="disableButton">stimulate clotting of blood</button>
+            <button ion-button [style.background]="bC4" (click)="precheck(4)" [disabled]="disableButton">stimulate pituitary gland</button>
+            <button ion-button [style.background]="correctColor" (click)="precheck(1)" [disabled]="disableButton">compensate for underactive the thyroid gland</button>
+        </div>
+    </div>
+    <div class="quiz" *ngIf="counter == 61" style="height: 315px">
+        <h1>Congratulations!</h1>
+        <p>You've finished this one. Click below to see your results:</p>
+        <div class="btn-row">
+            <button ion-button id="proceed" (click)="viewResults()" block>VIEW RESULTS</button>
+        </div>
+    </div>
+    <div id="score" *ngIf="counter > 0 && done === true">
+        <div id="time">{{timerValue}}s</div>
+        <div id="results"><b>Your Score</b>
+            <br>{{score}}/50
+            <br>
+            <div class="stars">
+                <ion-icon class="star" name="star" *ngIf="score >= 12"></ion-icon>
+                <ion-icon class="star" name="star" *ngIf="score >= 24"></ion-icon>
+                <ion-icon class="star" name="star" *ngIf="score >= 36"></ion-icon>
+                <ion-icon class="star" name="star" *ngIf="score >= 48"></ion-icon>
+                <ion-icon class="star" name="star" *ngIf="score >= 56"></ion-icon>
+            </div>
+        </div>
+        <button ion-button (click)="reset()" id="start">Restart</button>
+        <div class="results-table">
+            <div class="row">
+                <div *ngFor="let x of scores"> <span id="wrong" *ngIf="x == 0">{{x}}</span> <span id="right" *ngIf="x == 1">{{x}}</span> </div>
+                <br>
+                <br>
+                <br>
+                <br> </div>
+        </div>
+    </div>
+</ion-content>
